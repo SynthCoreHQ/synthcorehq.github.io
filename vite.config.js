@@ -4,7 +4,7 @@ import path from 'path';
 
 export default defineConfig({
     plugins: [react()],
-    base: './',
+    base: '/',
     server: {
         port: '3000',
         open: true,
@@ -12,10 +12,5 @@ export default defineConfig({
     build: {
         outDir: 'build',
         assetsDir: 'assets',
-    },
-    resolve: {
-        alias: {
-            '@synthcore': path.resolve(__dirname, 'src'),
-        },
     },
 });

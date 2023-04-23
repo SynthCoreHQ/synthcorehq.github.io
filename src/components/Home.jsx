@@ -1,4 +1,4 @@
-import svg from '@synthcore/assets/science.gif';
+import svg from '../assets/science.gif';
 
 const Home = () => {
     return (

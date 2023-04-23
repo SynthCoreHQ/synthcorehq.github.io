@@ -1,4 +1,4 @@
-import notfound from '@synthcore/assets/404.gif';
+import notfound from '../assets/404.gif';
 
 const NotFound = () => {
     return (

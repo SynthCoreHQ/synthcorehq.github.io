@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Footer, Header } from '@synthcore/components';
+import { Footer, Header } from './components';
 import { Outlet } from 'react-router-dom';
 
 const App = () => {
