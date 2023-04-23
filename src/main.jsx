@@ -1,10 +1,61 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+// Bulma CSS
+import 'bulma/css/bulma.min.css';
+// Important Imports
+import React from 'react';
+import { App } from '@synthcore/App';
+import { createRoot } from 'react-dom/client';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import {
+    About,
+    Contact,
+    Home,
+    NotFound,
+    Services,
+} from '@synthcore/components';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+// Navbar Hamburger Menu JavaScript
+$(document).ready(function () {
+    $('.navbar-burger').click(function () {
+        $('.navbar-burger').toggleClass('is-active');
+        $('.navbar-menu').toggleClass('is-active');
+    });
+});
+
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <App />,
+        children: [
+            {
+                path: '/',
+                element: <Home />,
+            },
+            {
+                path: '/about',
+                element: <About />,
+            },
+            {
+                path: '/services',
+                element: <Services />,
+            },
+            {
+                path: '/contact',
+                element: <Contact />,
+            },
+            {
+                path: '*',
+                element: <NotFound />,
+            },
+        ],
+    },
+]);
+
+// Rendering the App
+const synthCoreElement = document.getElementById('synthcore');
+const synthCore = createRoot(synthCoreElement);
+
+synthCore.render(
+    <React.StrictMode>
+        <RouterProvider router={router} />
+    </React.StrictMode>
+);
