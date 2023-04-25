@@ -10,7 +10,12 @@ const Header = () => {
                             <h4 className='title is-4'>SynthCore</h4>
                         </a>
 
-                        <a className='navbar-burger' data-target='navbarBurger'>
+                        <a
+                            className='navbar-burger'
+                            role='button'
+                            aria-label='menu'
+                            aria-expanded='false'
+                            data-target='navbarBurger'>
                             <span aria-hidden='true'></span>
                             <span aria-hidden='true'></span>
                             <span aria-hidden='true'></span>
