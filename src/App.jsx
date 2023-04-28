@@ -1,18 +1,17 @@
-import { Fragment } from 'react';
 import { Footer, Header } from './components';
 import { Outlet } from 'react-router-dom';
 
 const App = () => {
     return (
-        <Fragment>
-            <section className='hero is-black is-fullheight'>
+        <>
+            <section className='min-h-screen'>
                 <Header />
-                <div className='hero-body'>
+                <div>
                     <Outlet />
                 </div>
                 <Footer />
             </section>
-        </Fragment>
+        </>
     );
 };
 
