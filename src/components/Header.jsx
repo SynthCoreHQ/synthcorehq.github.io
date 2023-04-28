@@ -2,50 +2,43 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className='hero-head'>
-            <nav className='navbar'>
-                <div className='container'>
-                    <div className='navbar-brand'>
-                        <a className='navbar-item'>
-                            <h4 className='title is-4'>SynthCore</h4>
-                        </a>
+        <header className='flex flex-wrap items-center justify-between p-4 text-lg text-white'>
+            <div>SynthCore</div>
 
-                        <a
-                            className='navbar-burger'
-                            role='button'
-                            aria-label='menu'
-                            aria-expanded='false'
-                            data-target='navbarBurger'>
-                            <span aria-hidden='true'></span>
-                            <span aria-hidden='true'></span>
-                            <span aria-hidden='true'></span>
-                        </a>
-                    </div>
+            <svg
+                xmlns='http://www.w3.org/2000/svg'
+                id='menu-button'
+                className='h-6 w-6 cursor-pointer md:hidden block'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke='currentColor'>
+                <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2'
+                    d='M4 6h16M4 12h16M4 18h16'
+                />
+            </svg>
 
-                    <div className='navbar-menu' id='navbarBurger'>
-                        <div className='navbar-end'>
-                            <Link to={'/'} className='navbar-item is-tab'>
-                                Home
-                            </Link>
-                            <Link to={'/about'} className='navbar-item is-tab'>
-                                About Us
-                            </Link>
-                            <Link
-                                to={'/services'}
-                                className='navbar-item is-tab'>
-                                Services
-                            </Link>
-
-                            <Link
-                                to={'/contact'}
-                                className='navbar-item is-tab'>
-                                Contact Us
-                            </Link>
-                        </div>
-                    </div>
-                </div>
+            <nav
+                className='hidden w-full md:flex md:items-center md:w-auto'
+                id='menu'>
+                <ul className='text-base md:flex md:justify-center space-x-4'>
+                    <li>
+                        <Link to={'/'}>Home</Link>
+                    </li>
+                    <li>
+                        <Link to={'/about'}>About Us</Link>
+                    </li>
+                    <li>
+                        <Link to={'/services'}>Services</Link>
+                    </li>
+                    <li>
+                        <Link to={'/contact'}>Contact Us</Link>
+                    </li>
+                </ul>
             </nav>
-        </div>
+        </header>
     );
 };
 
